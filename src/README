@@ -1,0 +1,10 @@
+# -*- mode: org -*-
+#+TITLE: GF from source
+
+this image is not meant to be =docker pulled=; rather, you should
+download the Dockerfile and place it in the root of the GF repo at the
+commit you'd like to build the repo from.
+
+* building
+at the GF repo's root:
+: docker build -t my-gf-image .

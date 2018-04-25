@@ -1,0 +1,18 @@
+# -*- mode: org -*-
+#+TITLE: Docker recipes for Grammatical Framework images
+
+this repository contains =Dockerfiles= that build GF
+images. documentation is either in the =Dockerfiles= themselves or in
+a README in the appropriate directory.
+
+the images are built upon the official [[https://hub.docker.com/_/debian/][Debian image]] or the [[https://hub.docker.com/_/haskell/][haskell
+image]].
+
+* running
+the images do not specify =CMD= or =ENTRYPOINT= directives, so you are
+free to choose yours. good choices are good ol' =bash= and (of course)
+=gf= (with any of its flags).
+
+you probably want to use the =--volume= flag to add your grammar to
+the image at runtime, like so:
+: docker run -it -v ~/my-grammars-repo:/home/gfer/ [gf_image] [entrypoint]
